@@ -1,0 +1,1 @@
+This is a collection of various small projects that I don't want to lose.
