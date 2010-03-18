@@ -4,12 +4,12 @@ function Step() {
   var counter;
   var results;
   
-  function next(result) {
+  function next() {
     if (steps.length <= 0) { return; }
     var fn = steps.shift();
     counter = 0;
     results = [];
-    fn.apply(next, result);
+    fn.apply(next, arguments);
   }
   next.parallel = function () {
     counter++;
