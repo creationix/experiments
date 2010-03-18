@@ -1,9 +1,7 @@
 // Inspired by http://github.com/willconant/flow-js
 function Step() {
-  var steps = Array.prototype.slice.call(arguments);
-  var counter;
-  var results;
-  
+  var steps = Array.prototype.slice.call(arguments),
+      counter, results;
   function next() {
     if (steps.length <= 0) { return; }
     var fn = steps.shift();
@@ -21,7 +19,6 @@ function Step() {
       }
     }
   };
-  
   next([]);
 }
 module.exports = Step;
