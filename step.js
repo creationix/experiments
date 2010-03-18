@@ -10,10 +10,11 @@ function Step() {
     fn.apply(next, arguments);
   }
   next.parallel = function () {
+    var i = counter;
     counter++;
     return function () {
       counter--;
-      results.push(arguments);
+      results[i] = arguments;
       if (counter <= 0) {
         next(results);
       }
